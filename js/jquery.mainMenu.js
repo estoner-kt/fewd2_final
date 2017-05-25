@@ -55,13 +55,6 @@
                 $(slide).next().slideToggle(settings.toggleSpeed);
 
             });
-//            $("li.subMenu > a span").click(function (event) {
-//                event.preventDefault();
-//                var slide = event.target;
-//                $(slide).next().slideToggle(settings.toggleSpeed);
-//
-//            });
-//            
 
 
         //    Hover Menu
