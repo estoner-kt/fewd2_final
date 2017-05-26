@@ -25,6 +25,7 @@
                 window.console.log(charItem);
                 $(".main-menu li:not('.subMenu li')").css("width", charItem);
             }
+            $(".menu-header, .menu span, .main-menu li a, .subMenu ul").css("color", settings.fontColor);
             
             
             if ($(".menu").outerWidth() >= 900) {
@@ -34,9 +35,9 @@
             } else {$(".subMenu, .subMenu li").css("background-color", settings.submenuColor);
                    }
             
-//            $(window).resize(function () {
-//                location.reload();
-//            });
+            $(window).resize(function () {
+                location.reload();
+            });
             
             $(".subMenu ul").hide();
             var state = "up", slide;
@@ -55,6 +56,13 @@
                 $(slide).next().slideToggle(settings.toggleSpeed);
 
             });
+//            $("li.subMenu > a span").click(function (event) {
+//                event.preventDefault();
+//                var slide = event.target;
+//                $(slide).next().slideToggle(settings.toggleSpeed);
+//
+//            });
+//            
 
 
         //    Hover Menu
