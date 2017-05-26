@@ -1,5 +1,5 @@
-#Quick Fix Front-End Development Framework 
-####Built by the Quick Fix team for the SDCE Front End Web Developer Certificate Program
+# Quick Fix Front-End Development Framework 
+#### Built by the Quick Fix team for the SDCE Front End Web Developer Certificate Program
 #### The Team is made up of [John Gruber](https://github.com/jfgruber), [Kate Stoner](https://github.com/estoner-kt), [Veronica Ferman](https://github.com/vferman2000), and [Nefer Lopez](https://github.com/thatguynef).
 
 The framework comes with:
