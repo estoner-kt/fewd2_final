@@ -1,14 +1,20 @@
 (function ($) {
 	"use strict";
-//define name of plugin and how to call it
+//name of plugin and how to call it
     $.fn.tooltipPlugin = function (options) {
         var defaults, settings, tooltip_container, url, elementToGet, toolTipWidth, toolTipHeight, pageWidth;
+		defaults = {
+
+            "backgroundColor": "#000",
+            "color":  			"#FFF",
+			"fontSize": 		"12px",
+           	"border":       	"solid #f6e902"
+		};
         
         settings = $.extend({}, defaults, options);
         tooltip_container = $('<div id = "tooltip-container"></div>').hide().appendTo('body');
 		return this.each(function () {
 			$(this).mouseover(function (e) {
-		
 		
 				if ($(this).attr('data-tip-type') === 'html') {
 					url = $(this).attr("rel");
@@ -21,6 +27,10 @@
 					$('#tooltip-container').html(elementToGet);
 				}
 				$('#tooltip-container').css({'display': 'block', 'opacity': 0}).animate({opacity: 1}, 250);
+				$("#tooltip-container").css("background-color", settings.backgroundColor);
+				$("#tooltip-container").css("color", settings.color);
+				$("#tooltip-container").css("font-size", settings.fontSize);
+				$("#tooltip-container").css("border", settings.border);
 				
 			}).mousemove(function (e) {
 				toolTipWidth = $('#tooltip-container').outerWidth();
