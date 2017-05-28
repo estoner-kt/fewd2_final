@@ -6,6 +6,7 @@ grid
 lists
 tables
 font
+text-level
 alignment
 links
 buttons
@@ -51,17 +52,37 @@ p + ol {
   margin-top: 0;
 }
 
+ul {
+  list-style:disc; 
+	margin:0 0 1rem 0;
+
+}
+
+ol {
+  list-style: decimal;
+	margin:1rem 0 0 1rem 0;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1rem 0 1rem 3rem;
+}
+
+li {
+  margin: 1rem; }
 
 .list-unstyled {
-  margin-top: 0;
-  margin-bottom: 0;
-  list-style-type: none;
-  padding-left: 0;
+  list-style: none;
+  margin:0;
 }
 
 .list-unstyled > li {
-  margin-bottom: 0;
+ margin:0;
 }
+
+
 
 /* tables
    ========================================================================== */
@@ -212,6 +233,43 @@ text-transform: lowercase;
 text-transform: capitalize;
 }
 
+/* text-level semantics
+   ========================================================================== */
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+	
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+	
+}
+
+blockquote p {
+  display: inline;
+	
+}
+
+address {
+  display: block;
+  font-style: italic;
+	
+ }
+
+em, var { 
+    font-style: italic;
+	
+}
+
 /* alignment
    ========================================================================== */
 .text-left {
@@ -326,9 +384,6 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   border: 2px solid #E1E1E1;
   border-radius: 7px;
   box-sizing: border-box;
@@ -381,6 +436,7 @@ legend {
 }
 
 fieldset {
+  border: 2px solid #E1E1E1;
   padding: 0.7rem; 
 }
 
