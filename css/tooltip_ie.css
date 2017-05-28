@@ -1,10 +1,9 @@
 /*  CSS Document                             */
-/*  Written by Chris Converse for lynda.com  */
 
 /* Rules for IE 7 & 8 */
 
-#result {
+#tooltip-container {
 	width:200px;
 	background: none;
-	background-image: url(../images/transparency.png);
+	background-image: url(/img/ie_transparency.png);
 }
