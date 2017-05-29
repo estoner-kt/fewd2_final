@@ -182,7 +182,7 @@ Here's an example code snippet broken down by markup, the jQuery CDN install, an
 </script>
 ```
 
-### Full Code Example Code
+### Full Code Example
 ```
 <!doctype html>
 <html>
