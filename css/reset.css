@@ -11,13 +11,10 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-/*
 	margin: 0;
 	padding: 0;
-*/
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -42,6 +39,48 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+
+/* Button
+ ========================================================================== */
+button {
+  	-webkit-appearance: none;
+	-moz-appearance: none;
+    appearance: none;
+	background: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+}
+
+/* Form
+ ========================================================================== */
+
+form {
+	background: none;
+	
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+button
+select {
+  	-webkit-appearance: none;
+	-moz-appearance: none;
+    appearance: none;
+	background: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
 }
 
 /* Text-level semantics

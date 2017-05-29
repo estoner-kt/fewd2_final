@@ -3,7 +3,7 @@
 (function ($) {
     "use strict";
     $.fn.mainMenu = function (options) {
-        var defaults, settings, menuItem, charItem;
+        var defaults, settings, menuItem, charItem, menuWidth;
         defaults = {
 
             "backgroundColor": "#4b5f9b",
@@ -19,26 +19,27 @@
             $(".menu").css("background-color", settings.backgroundColor);
             $(".main-menu li:not('.subMenu')").css("background-color", settings.backgroundColor);
             
+            
             if ($(".menu").outerWidth() >= 820) {
                 menuItem = 100 / settings.menuNumber;
                 charItem = menuItem.toString() + "%";
-                window.console.log(charItem);
-                $(".main-menu li:not('.subMenu li')").css("width", charItem);
+                $(".main-menu li:not('.subMenu li')").width(charItem);
             }
-            $(".menu-header, .menu span, .main-menu li a, .subMenu ul").css("color", settings.fontColor);
-            
-            
-            if ($(".menu").outerWidth() >= 900) {
-                $(".subMenu, .subMenu li").css("background-color", settings.backgroundColor);
-                
-            
-            } else {$(".subMenu, .subMenu li").css("background-color", settings.submenuColor);
-                   }
-            
             $(window).resize(function () {
-                location.reload();
+                if ($(".menu").outerWidth() >= 820) {
+                    $(".menu-header, .menu span, .main-menu li a, .subMenu ul").css("color", settings.fontColor);
+                    $(".subMenu, .subMenu li").css("background-color", settings.backgroundColor);
+                }
+
+
+                if ($(".menu").outerWidth() < 820) {
+                    $(".subMenu, .subMenu li").css("background-color", settings.submenuColor);
+                    $(".main-menu li:not('.subMenu li')").css("width", "100%");
+
+
+                }
             });
-            
+
             $(".subMenu ul").hide();
             var state = "up", slide;
 
@@ -56,20 +57,15 @@
                 $(slide).next().slideToggle(settings.toggleSpeed);
 
             });
-//            $("li.subMenu > a span").click(function (event) {
-//                event.preventDefault();
-//                var slide = event.target;
-//                $(slide).next().slideToggle(settings.toggleSpeed);
-//
-//            });
-//            
 
 
-        //    Hover Menu
+            
+            //    Hover Menu
 
-            if ($(".menu").outerWidth() >= 1380) {
+
+            if ($(".menu").outerWidth() >= 1070) {
                 $(".subMenu span").hide();
-                
+
                 $(".main-menu a").hover(function () {
                     $(this).css("background-color", settings.highlightColor);
                 }, function () {
