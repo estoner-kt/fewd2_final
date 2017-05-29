@@ -11,6 +11,7 @@
         margin: 0;
         padding: 0;
         display: block;
+        position: static;
     }
     .menu li {
         list-style: none;
@@ -60,7 +61,7 @@
 
 }
 
-@media screen and (min-width: 570px) {
+@media screen and (min-width: 768px) {
 /*   CELL PORTRAIT*/
     .main-menu li a{
         font-size: 1.5rem;
@@ -68,11 +69,12 @@
     }
 }
 
-@media screen and (min-width: 820px) {
+@media screen and (min-width: 900px) {
     
     .menu {
         padding: 0;
         margin: 0;
+        position: static;
     }
     .menu-header {display: none;}
     .main-menu {
@@ -104,7 +106,7 @@
         padding: 0;
     }
     
-    .subMenu ul li{
+    .subMenu ul li {
         padding: 10px 0;
         margin: 0;
         display: block;
@@ -112,7 +114,7 @@
         width: 100%;
         border-bottom: thin solid white;
     }
-    .subMenu ul li:last-of-type{
+    .subMenu ul li:last-of-type {
         border: none;
     }
     .subMenu ul li a {
@@ -131,18 +133,35 @@
 
 }
 
-@media screen and (min-width: 1070px) {
+@media screen and (min-width: 1024px) {
 
     .main-menu li a {
         padding: 1em 0;
     }
     
+
     .subMenu ul li a {
         text-align: center;
         width: 100%;
         display: block;
         padding: 1em 0; 
     }
-    
+    .main-menu{
+         
+        z-index: 2; 
+        position: absolute;
+	    
+        
+    }
+    .menu {padding-bottom: 3em;}
+   
+    .subMenu::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+
+
 
 }
