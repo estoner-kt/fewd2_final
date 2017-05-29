@@ -8,8 +8,8 @@
 <!--    CSS-->
     <link href=" https://fonts.googleapis.com/css?family=Khula|Open+Sans+Condensed:300|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styling.css">
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/jquery.mainMenu.css">
     <link rel="stylesheet" href="css/components.css">
@@ -24,8 +24,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <!--    <script src="js/jquery.heightAdjust.js"></script>-->
     <script src="js/jquery.sticky.js"></script>
+	    <script src="js/jquery.tooltip.js"></script>
     <script src="js/jquery.mainMenu.js"></script>
-    <script src="js/tooltipPlugin.js"></script>
+
     <script>
         $(document).ready(function () {
             $(".menu").mainMenu({
@@ -37,7 +38,7 @@
 //                "fontColor":       "white",
                 "menuNumber":       "4"
             });
-            $ ('.tooltip').tooltipPlugin ();
+            $ ('.tooltip').tooltip ();
             $('aside').stickyAside();
             $('?').equalizeHeight();
             
@@ -60,8 +61,8 @@
 <nav class="menu">
       <div class="menu-header"><span class="fa">&#xf0c9;</span>Menu</div>
         <ul class="main-menu list-unstyled">
-            <li><a href="#style">Styles</a></li>
-            <li><a href="#grid">Grid</a></li>
+            <li><a href="#style" class="tooltip" data-tip-type="text" tooltip-title="Description Text">Styles</a></li>
+            <li><a href="#grid" class="tooltip" data-tip-type="text" tooltip-title="Description Grid">Grid</a></li>
             <li class="subMenu" data-trigger = "submenu"><a href="#">CSS Components<span class="fa">&#xf150;</span></a>
                 <ul class="list-unstyled">
                     <li data-trigger = "submenu"><a href="#filters">Image Filters</a></li>
@@ -572,10 +573,10 @@
                     <input type="radio" name="sex" value="Female"> Female<br><br>
                     <select>
                     <option>Where do you live?</option>
-                Â  	<option value="SF">San Francisco</option>
-                Â  	<option value="LA">Los Angeles</option>
-                Â  	<option value="NY">New York</option>
-                Â  	<option value="Seattle">Seatle</option>
+                  	<option value="SF">San Francisco</option>
+                 	<option value="LA">Los Angeles</option>
+                  	<option value="NY">New York</option>
+                  	<option value="Seattle">Seatle</option>
                     </select>
                     <br>
                     <p>Comments:</p>
