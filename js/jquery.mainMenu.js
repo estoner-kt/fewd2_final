@@ -1,51 +1,15 @@
 /*global $, jQuery*/
 /*MENU*/
-//(function($){
-//    $.fn.highlightMenu = function(options) {
-//        var settings = $.extend({
-//            bgColor : "#000000",
-//            color : "#ffffff",
-//            hoverBgColor : "#cccccc",
-//            hoverColor : "#000000"
-//        }, options);
-//        
-//        return this.each(function() {
-//            var items = $("li a");
-//            
-//            items.css("font-family", "arial, helvetica, sans-serif")
-//                .css("font-weight", "bold")
-//                .css("text-decoration", "none")
-//                .css("background-color", settings.bgColor)
-//                .css("color", settings.color)
-//                .css("width", "125px")
-//                .css("display", "block")
-//                .css("margin-bottom", "15px")
-//                .css("padding", "5px");
-//            items.mouseover(function() {
-//                $(this).css("background-color", settings.hoverBgColor)
-//                    .css("color", settings.hoverColor);
-//            });
-//            items.mouseout(function() {
-//                $(this).css("background-color", settings.bgColor)
-//                    .css("color", settings.color);
-//            });
-//        });
-//    }
-//})(jQuery);
-
-
 (function ($) {
     "use strict";
     $.fn.mainMenu = function (options) {
-        var defaults, settings, menuItem = 0;
+        var defaults, settings, menuItem, charItem;
         defaults = {
 
             "backgroundColor": "#4b5f9b",
             "highlightColor":  "aqua",
             "submenuColor":    "#5c688a",
             "toggleSpeed":     "1000",
-            "brand":           "false",
-            "logo":            "false",
             "fontColor":       "white",
             "menuNumber":       "5"
         };
@@ -55,16 +19,25 @@
             $(".menu").css("background-color", settings.backgroundColor);
             $(".main-menu li:not('.subMenu')").css("background-color", settings.backgroundColor);
             
+            if ($(".menu").outerWidth() >= 820) {
+                menuItem = 100 / settings.menuNumber;
+                charItem = menuItem.toString() + "%";
+                window.console.log(charItem);
+                $(".main-menu li:not('.subMenu li')").css("width", charItem);
+            }
+            $(".menu-header, .menu span, .main-menu li a, .subMenu ul").css("color", settings.fontColor);
+            
+            
             if ($(".menu").outerWidth() >= 900) {
                 $(".subMenu, .subMenu li").css("background-color", settings.backgroundColor);
-            } else {$(".subMenu, .subMenu li").css("background-color",                      settings.submenuColor);
+                
+            
+            } else {$(".subMenu, .subMenu li").css("background-color", settings.submenuColor);
                    }
-//            Branding or logo will add one space each to the menuNumber
-            if (settings.brand) {
-                menuItem = settings.menuNumber + menuItem + 1;
-            } else if (settings.logo) {
-                menuItem = settings.menuNumber + menuItem + 1;
-            }
+            
+            $(window).resize(function () {
+                location.reload();
+            });
             
             $(".subMenu ul").hide();
             var state = "up", slide;
@@ -83,10 +56,20 @@
                 $(slide).next().slideToggle(settings.toggleSpeed);
 
             });
+//            $("li.subMenu > a span").click(function (event) {
+//                event.preventDefault();
+//                var slide = event.target;
+//                $(slide).next().slideToggle(settings.toggleSpeed);
+//
+//            });
+//            
+
 
         //    Hover Menu
 
             if ($(".menu").outerWidth() >= 1380) {
+                $(".subMenu span").hide();
+                
                 $(".main-menu a").hover(function () {
                     $(this).css("background-color", settings.highlightColor);
                 }, function () {
