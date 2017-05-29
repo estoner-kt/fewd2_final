@@ -35,10 +35,22 @@
 //                "submenuColor":    "#5c688a",
 //                "toggleSpeed":     "1000",
 //                "fontColor":       "white",
-//                "menuNumber":       "5"
+                "menuNumber":       "4"
             });
             $ ('.tooltip').tooltipPlugin ();
             $('aside').stickyAside();
+            $('?').equalizeHeight();
+            
+            
+            	$('#stories-1') // select wrapping element by ID
+			.find('.story') // select element to height adjust
+			.equalizeHeight() // sets tallest min-height to element
+			.css('background', 'red'); // enter css styles here
+		
+		$('#stories-2')
+			.find('.story')
+			.equalizeHeight()
+			.css('background', 'green');
             
         });
     </script>
@@ -48,41 +60,43 @@
 <nav class="menu">
       <div class="menu-header"><span class="fa">&#xf0c9;</span>Menu</div>
         <ul class="main-menu list-unstyled">
-            <li><a href="#">Item 1</a></li>
-            <li><a href="#">Item 2</a></li>
-            <li class="subMenu" data-trigger = "submenu"><a href="#">Item 3 <span class="fa">&#xf150;</span></a>
+            <li><a href="#style">Styles</a></li>
+            <li><a href="#grid">Grid</a></li>
+            <li class="subMenu" data-trigger = "submenu"><a href="#">CSS Components<span class="fa">&#xf150;</span></a>
                 <ul class="list-unstyled">
-                    <li data-trigger = "submenu"><a href="#">SubItem 1</a></li>
-                    <li class="table-unstyled" data-trigger = "submenu"><a href="#">SubItem 2</a></li>
+                    <li data-trigger = "submenu"><a href="#filters">Image Filters</a></li>
+                    <li class="table-unstyled" data-trigger = "submenu"><a href="#video">Responsive Video</a></li>
+                    <li class="table-unstyled" data-trigger = "submenu"><a href="#footer">Sticky Footer</a></li>
+                    <li class="table-unstyled" data-trigger = "submenu"><a href="#hero">Hero Image</a></li>
                 </ul>
             </li>
-            <li><a href="#">Item 4</a></li>
-            <li class="subMenu" data-trigger = "submenu"><a href="">Item 5 <span class="fa">&#xf150;</span></a>
+            
+            <li class="subMenu" data-trigger = "submenu"><a href="">jQuery Plugins<span class="fa">&#xf150;</span></a>
                 <ul class="list-unstyled">
-                    <li class="table-unstyled" data-trigger = "submenu"><a href="#">SubItem 1</a></li>
-                    <li class="table-unstyled" data-trigger = "submenu"><a href="#">SubItem 2</a></li>
+                    <li class="table-unstyled" data-trigger = "submenu"><a href="#">Menu</a></li>
+                    <li class="table-unstyled" data-trigger = "submenu"><a href="#">Tooltips</a></li>
+                    <li class="table-unstyled" data-trigger = "submenu"><a href="#sticky">Sticky Element</a></li>
+                    <li class="table-unstyled" data-trigger = "submenu"><a href="#height">Height Adjust</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
 <!--    Hero Image-->
-<!--
 <header class=" col-12-12">
 
 
         <div >
-            <h1>I'm The Hero</h1>
+            <h1 id="hero">I'm The Hero</h1>
         </div>
         <div >
             <button class="button">Learn More</button>
         </div>
     </header>
--->
     <main  class="grid grid-tab">
         <div class=" col-8-12">
           <div class="content">
            <h1>Individual Components</h1>
-            <h2>The Grid</h2>
+            <h2 id="grid">The Grid</h2>
             <div class="grid grid-tab">
                         <div class="col-1-12">
                             <div class="content">
@@ -298,7 +312,7 @@
                         </div>
                     
                     </div>
-               <h2>Filters</h2>
+               <h2 id="filters">Filters</h2>
                <figure class="col-3-12"><img class="image-responsive" src="img/Bradley-Hand-Quick-Fix.png">
                  <figcaption>No Filter</figcaption>
                   </figure>
@@ -348,7 +362,7 @@
                   </figure>
                   
                   <div class="col-6-12">
-                   <h2 class="tooltip" data-tip-type="text" tooltip-title="This is a video file from Youtube">Video Responsive</h2>
+                   <h2 id="video" class="tooltip" data-tip-type="text" tooltip-title="This is a video file from Youtube">Video Responsive</h2>
                 <div class="videoWrapper">
                     <!-- Copy & Pasted from YouTube -->
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/uPov7uKu8Ys" frameborder="0" allowfullscreen></iframe>
@@ -366,7 +380,7 @@
                
                 
             <div class="content">
-                <h1 class = "font-large">Styling Guide</h1>
+                <h1 id="style" class = "font-large">Styling Guide</h1>
 
                 <h1> Heading one</h1>
                 <h2> Heading two</h2>
@@ -580,11 +594,14 @@
    <div  class="grid grid-tab">
        <div class="col-4-12">
            <div class="content">
-               <aside class="move-right">Sticky Sidebar</aside>
+               <aside id="sticky" class="move-right">Sticky Sidebar</aside>
            </div>
        </div>
    </div>
-    <footer class="footer footer-center height-100">
+   
+   <h2 id="height">Height Adjust</h2>
+   <div></div>
+    <footer id="footer" class="footer footer-center height-100">
         <p>I'm your footer</p>
     </footer>
     
